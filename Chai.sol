@@ -16,7 +16,6 @@ contract Chai{
         owner = payable(msg.sender); //normal to payable not passolble so typecast it to payable
     }
 
-
     function buyChai(string calldata name,string calldata message) external payable{
         //external because we will not be calling within the function
         require(msg.value>0,"Too Low Funds, Has to be Greater thn 0");
@@ -27,15 +26,4 @@ contract Chai{
     function getMemos() public view returns(Memo[] memory){
         return memos;
     }
-
-
-
-
-
-
-
-
-
-
-
 }
