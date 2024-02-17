@@ -3,21 +3,15 @@ Buy Me Coffee - Daap
     A Decentralized Application that allows users to donate money for you and buy yiu a coffee 
     Once connected with wallet all the transactions are shown as it is transparent and more 
     
+Dapp consists of 2 components
+    1.Frontend - React,Tailwind CSS ,JavaScript
+    2.Smart Contact - Solidity 
 
+    To communicate between blockchain and React , we use Ether.js library 
+    Help connect with each other 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Smart contract 
+    Send Money to Buy Coffe and send a message and then an acknowledgement is sent 
 
 
 
