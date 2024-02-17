@@ -27,7 +27,7 @@ const App = () => {
         //metamsk is popped to connec to it
       })
 
-      window.ethereum.n("Accounts Cahnged",()=>{
+      window.ethereum.on("Accounts Cahnged",()=>{
         window.location.reload();
       })
       setAccount(account); //once account is connected set account
