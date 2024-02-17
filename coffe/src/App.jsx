@@ -2,6 +2,8 @@ import { ethers } from "hardhat"
 import { useEffect } from "react"
 import { useState } from "react"
 import abi from "./contract/Chai.json"
+import Buy from "./components/Buy"
+import Memos from "./components/Memos"
 
 const App = () => {
   const [state,setState]=useState({
@@ -23,6 +25,10 @@ const App = () => {
       const account = await ethereum.request({
         method:"eth_requestAccounts" //automatically opens metamsk wallet when user visits the site
         //metamsk is popped to connec to it
+      })
+
+      window.ethereum.n("Accounts Cahnged",()=>{
+        window.location.reload();
       })
       setAccount(account); //once account is connected set account
 
@@ -48,7 +54,9 @@ const App = () => {
 
   return (
     <div>
-
+      Connected Account: {account}
+      <Buy state={state} /> 
+      <Memos state={state}  />
     </div>
   )
 }
