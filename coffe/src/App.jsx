@@ -1,3 +1,4 @@
+import { ethers } from "hardhat"
 import { useEffect } from "react"
 import { useState } from "react"
 
@@ -19,6 +20,18 @@ const App = () => {
         method:"eth_requestAccounts" //automatically opens metamsk wallet when user visits the site
         //metamsk is popped to connec to it
       })
+
+      const provider = new ethers.providers.Web3Provider(ethereum); //helps in connecting to blockchain , read the blockahin
+      const signer = provider.getSigner(); //a signer is required to do transactions to change state of Blockahin , write on the blockcahin
+
+      const contract = new ethers.Contract( //create a instance of the smart contract to talk to the blockahin
+        contractAddress,
+        contractABI,
+        signer //required to do all sorts of tranactions on the blockchain
+      )
+
+
+
     }
     template();
   },[])
