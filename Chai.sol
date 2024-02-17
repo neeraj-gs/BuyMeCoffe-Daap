@@ -24,6 +24,10 @@ contract Chai{
         memos.push(Memo(name,message,block.timestamp,msg.sender));
     }
 
+    function getMemos() public view returns(Memo[] memory){
+        return memos;
+    }
+
 
 
 
