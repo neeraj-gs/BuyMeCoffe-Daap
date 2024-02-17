@@ -1,6 +1,7 @@
 import { ethers } from "hardhat"
 import { useEffect } from "react"
 import { useState } from "react"
+import abi from "./contract/Chai.json"
 
 const App = () => {
   const [state,setState]=useState({
@@ -13,8 +14,8 @@ const App = () => {
 
   useEffect(()=>{
     const template = async()=>{
-      const contractAddress="";
-      const contractABI="";
+      const contractAddress=""; //add account address contract after deploying on a network
+      const contractABI=abi; //extract from contract.json , from the assets foler
 
       //Connect ot metamask , for transactions on Goerli test net , Metamask consisys of infura api whoch actually help in connecting to blockhain
       try { //added try cathc block as some times there cannot be a metamsk account
